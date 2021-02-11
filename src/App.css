@@ -1,7 +1,11 @@
 .App {
   text-align: center;
-  height: 200vh;
+  height: 100vh;
   background-color: skyblue;
+  background-image: url('https://wallpapercave.com/wp/wp2506797.jpg');
+  background-size: cover;
+  background-position: center;
+
 }
 
 .hamburger{
@@ -9,11 +13,9 @@
   display: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   position: fixed;
   top: 10px;
   left: 20px;
-
 }
 
 .hamburger li{
@@ -24,8 +26,72 @@
 }
 
 
-@media only screen and(max-width:780px){
+.items{
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  transition:1s;
+}
+
+.items li {
+  margin: 15px 5%;
+  font-size: 15pt;
+  font-weight: bold;
+  color: white;
+}
+
+@media only screen and (max-width: 780px) {
   .hamburger{
     display: block;
+    z-index: 2;
+  }
+
+  .hamburger li{
+    transition: .8s;
+  }
+
+  .hamburger.active li{
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .hamburger.active li:nth-child(1){
+    transform:  translateY(10px) rotate(45deg);
+  }
+
+  .hamburger.active li:nth-child(2){
+    transform:  translateX(-20px);
+    opacity: 0;
+  }
+
+  .hamburger.active li:nth-child(3){
+    transform:  translateY(-14px) rotate(-45deg);
+  }
+  .items{
+    display: block;
+    z-index: 1;
+    height: 100vh;
+    position: fixed;
+    width: 300px;
+    top:0;
+    left: -300px;
+    transition: .5s;
+  }
+
+  .items.active{
+    display: block;
+    transform: translateX(300px);
+  }
+
+  .items li{
+    margin: 15vh 0;
+    font-size: 18pt;
   }
 }
