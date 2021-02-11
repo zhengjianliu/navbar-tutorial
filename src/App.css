@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  height: 200vh;
+  background-color: skyblue;
+}
+
+.hamburger{
+  list-style-type: none;
+  display: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+
+}
+
+.hamburger li{
+  width: 40px;
+  height: 5px;
+  background-color: black;
+  margin: 7px 0;
+}
+
+
+@media only screen and(max-width:780px){
+  .hamburger{
+    display: block;
+  }
+}
